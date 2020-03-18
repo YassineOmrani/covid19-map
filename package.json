@@ -1,0 +1,27 @@
+{
+  "name": "covid19-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YassineOmrani/covid19-map.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YassineOmrani/covid19-map/issues"
+  },
+  "homepage": "https://github.com/YassineOmrani/covid19-map#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-geocoder": "^3.25.1",
+    "request": "^2.88.2"
+  }
+}
