@@ -1,5 +1,5 @@
 # COVID-19-map
-    ![Screenshot](https://github.com/YassineOmrani/covid19-map/blob/master/img/screen.png)
+   
     
 ## Description
     During COVID-19 quarantine in Tunisia , Yassine Omrani Web Developer geleg mchee 3mal hal projet no reason just for fun.
@@ -11,3 +11,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+ ![Screenshot](https://github.com/YassineOmrani/covid19-map/blob/master/img/screen.png)
