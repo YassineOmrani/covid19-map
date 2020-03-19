@@ -1,5 +1,5 @@
 # COVID-19-map
-    ![Screenshot](./img/screen.png)
+    ![Optional Text](../master/img/screen.png)
     
 ## Description
     During COVID-19 quarantine in Tunisia , Yassine Omrani Web Developer geleg mchee 3mal hal projet no reason just for fun.
