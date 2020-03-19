@@ -6,28 +6,47 @@ mapboxgl.accessToken =
 
 // Fetch Number of cases per country
 async function getNumberOfCasesPerCountry() {
-    const data = await fetch('/api/v1/casesbycountry')
-    .then(data => data.json())
-    .catch(err => console.log(err))
-    const countries = data.countries_stat.splice(0,50)
-    const formulatedData = countries.map(async (s) => {
-        const geodata = await fetch('/api/v1/'+s.country_name)
-        .then(result => result.json())
-        .catch(err => console.error(err))  
+    /******************************** */
+    // should add spinner aka loading 
+    // compoenent for wait all async
+    // code ...
+    /******************************** */
+    try {
+        const CountriesResponse = await fetch('/api/v1/casesbycountry');
+        const dataCountries = await CountriesResponse.json(); // should use 2 await with fetch 
+        // console.log(dataCountries);
+        const countries = dataCountries.countries_stat.splice(0,50);
+        // console.log(countries);
+        const formulatedData = countries.map(async ({ country_name, cases, deaths, total_recovered }) => {
+            try {
+                // better with template sring --ES6
+                const geodataReponse = await fetch(`/api/v1/${country_name}`);
+                const geodata = await geodataReponse.json();
+                
+                const data = { // desturcutre is better for your code --clean-code
+                    country: country_name,
+                    nbCases: cases,
+                    nbDeaths: deaths,
+                    nbRecovered: total_recovered,
+                    geoLocation: geodata
+                };
 
-        const data = {
-            country: s.country_name,
-            nbCases: s.cases,
-            nbDeaths: s.deaths,
-            nbRecovered: s.total_recovered,
-            geoLocation: geodata
-        }
-        return data
-    })
-    const result = await Promise.all(formulatedData).then(data => {
-            return data 
-    })
-    return result
+                return data;
+            } catch (error) {
+               console.log(error); // you can return or throw error if you want .. 
+            }
+        });
+
+        // not the best way but it's work 
+        // should update the workflow inside 
+        // the map func .. 
+        const result = await Promise.all(formulatedData).then(data => data);
+        // console.log(result);
+        
+        return result;
+    } catch (error) {
+        console.log(err);
+    }
 }
 
 
