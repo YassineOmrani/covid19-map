@@ -11,8 +11,11 @@
     "url": "git+https://github.com/YassineOmrani/covid19-map.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Yassine Omrani",
+  "contributors": [
+    "Imed Jaberi"
+  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/YassineOmrani/covid19-map/issues"
   },
@@ -23,5 +26,8 @@
     "express": "^4.17.1",
     "node-geocoder": "^3.25.1",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
