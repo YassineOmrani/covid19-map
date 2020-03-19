@@ -38,6 +38,13 @@ var map = new mapboxgl.Map({
     zoom: 1
 });
 
+var overlay = document.getElementById('map-overlay');
+
+// Create a popup, but don't add it to the map yet.
+var popup = new mapboxgl.Popup({
+    closeButton: false
+    });
+
 getNumberOfCasesPerCountry().then(data => {
     data.forEach((e) => {
         new mapboxgl.Popup({ closeOnClick: false })
